@@ -31,65 +31,467 @@
 
     <!-- Favicon -->
     <link rel="icon" href="img/favicon.jpg" type="image/png">
+    
+    <!-- Responsive Styles -->
+    <style>
+        /* Global Responsive Styles */
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            overflow-x: hidden;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Header Responsive Styles */
+        .header-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+        
+        .logo-container {
+            flex: 0 0 auto;
+            max-width: 400px;
+            margin-right: 20px;
+        }
+        
+        .main-nav {
+            flex: 1 1 auto;
+        }
+        
+        .main-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        .main-nav ul li {
+            margin: 5px 10px;
+        }
+        
+        .InputContainer {
+            margin-left: auto;
+        }
+        
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+        
+        /* Product Nav Responsive */
+        .product-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .product-nav li {
+            margin-bottom: 5px;
+        }
+        
+        /* About Container Responsive */
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 2rem;
+        }
+        
+        .about-left {
+            flex: 1 1 100%;
+            padding-right: 0;
+        }
+        
+        .about-right {
+            flex: 1 1 100%;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .stats-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        /* Gallery Responsive */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        /* Client Container Responsive */
+        .client-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px;
+        }
+        
+        .logo-scroller {
+            flex: 1 1 100%;
+            margin-bottom: 30px;
+        }
+        
+        .right-content {
+            flex: 1 1 100%;
+        }
+        
+        /* Contact Form Responsive */
+        .form-section {
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .contact-form {
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .form-input, .form-textarea {
+            width: 100%;
+        }
+        
+        /* Footer Responsive */
+        .footer-section {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px 20px;
+        }
+        
+        .footer-column {
+            flex: 1 1 50%;
+            min-width: 200px;
+            margin-bottom: 30px;
+        }
+        
+        /* Carousel Responsive */
+        .carousel-item img {
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .carousel-caption h1 {
+            font-size: calc(1.5rem + 1.5vw);
+        }
+        
+        .carousel-caption p {
+            font-size: calc(0.9rem + 0.3vw);
+        }
+        
+        /* Testimonial Cards Responsive */
+        .testimonial-card {
+            flex: 0 0 80%;
+            max-width: 300px;
+        }
+        
+        /* Media Queries */
+        @media (min-width: 768px) {
+            .about-left {
+                flex: 0 0 60%;
+                padding-right: 40px;
+            }
+            
+            .about-right {
+                flex: 0 0 40%;
+                margin-top: 0;
+            }
+            
+            .footer-column {
+                flex: 1 1 25%;
+            }
+            
+            .logo-scroller {
+                flex: 0 0 40%;
+                margin-right: 30px;
+                margin-bottom: 0;
+            }
+            
+            .right-content {
+                flex: 0 0 55%;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .heading {
+                font-size: 60px;
+            }
+            
+            .highlight, .connection-text, .subheading {
+                font-size: 36px;
+            }
+            
+            .connection-text {
+                left: 300px;
+                top: -40px;
+            }
+            
+            .about-left h1 {
+                font-size: 50px;
+            }
+            
+            .stat {
+                width: 160px;
+                height: 160px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .mobile-menu-toggle {
+                display: block;
+                order: 3;
+            }
+            
+            .main-nav {
+                flex: 1 0 100%;
+                order: 4;
+                display: none;
+            }
+            
+            .main-nav.active {
+                display: block;
+            }
+            
+            .main-nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .main-nav ul li {
+                margin: 10px 0;
+            }
+            
+            .logo-container {
+                order: 1;
+            }
+            
+            .InputContainer {
+                order: 2;
+                margin-left: 0;
+                margin-right: 10px;
+            }
+            
+            .product-nav li {
+                margin-left: -20px;
+            }
+            
+            .product-nav a {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .heading {
+                font-size: 40px;
+            }
+            
+            .highlight, .connection-text, .subheading {
+                font-size: 24px;
+            }
+            
+            .connection-text {
+                left: 200px;
+                top: -30px;
+            }
+            
+            .about-left h1 {
+                font-size: 40px;
+            }
+            
+            .stat {
+                width: 120px;
+                height: 120px;
+                margin-left: -30px;
+            }
+            
+            .stat-content h2 {
+                font-size: 1.2rem;
+            }
+            
+            .stat-content p, .stat-content h4, .stat-content h7 {
+                font-size: 0.7rem;
+            }
+            
+            .gallery-word {
+                font-size: 2.5rem;
+            }
+            
+            .middle-section {
+                flex-direction: column;
+            }
+            
+            .contact-details {
+                flex-direction: column;
+            }
+            
+            .detail-group {
+                margin-bottom: 30px;
+            }
+            
+            .info-tagline {
+                font-size: 36px;
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .header-container {
+                padding: 10px;
+            }
+            
+            .logo-container {
+                max-width: 150px;
+            }
+            
+            .InputContainer {
+                width: 150px;
+            }
+            
+            .input {
+                width: 140px;
+            }
+            
+            .product-nav li {
+                margin-left: -10px;
+            }
+            
+            .product-nav a {
+                padding: 8px 15px;
+                font-size: 12px;
+            }
+            
+            .heading {
+                font-size: 32px;
+            }
+            
+            .highlight, .connection-text, .subheading {
+                font-size: 20px;
+            }
+            
+            .connection-text {
+                left: 150px;
+                top: -25px;
+            }
+            
+            .about-left h1 {
+                font-size: 32px;
+            }
+            
+            .stat {
+                width: 100px;
+                height: 100px;
+                margin-left: -20px;
+            }
+            
+            .stat-content h2 {
+                font-size: 1rem;
+            }
+            
+            .gallery-word {
+                font-size: 2rem;
+            }
+            
+            .carousel-caption h1 {
+                font-size: 1.5rem;
+            }
+            
+            .carousel-caption p {
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+            }
+            
+            .carousel-caption .btn {
+                padding: 0.3rem 0.8rem;
+                font-size: 0.8rem;
+            }
+            
+            .footer-column {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
 </head>
 
 
-    <body>
+<body>
 
-        <!-- Spinner Start -->
-<div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-    <div class="spinner-border text-warning" style="width: 3rem; height: 3rem;" role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
-</div>
-<!-- Spinner End -->
-
-        <!-- Navbar & Hero Start -->
-        <div class="header-container" style="position: relative; z-index: 1;padding: 10px;">
-            
-    
-            <div class="logo-container">
-                <div class="logo">
-                    <img src="img/logo.png" alt="SERVO PACKAGING LIMITED"style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-               
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#">About <i class="fas fa-chevron-down"></i></a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </nav>
-            
-           <div class="InputContainer">
-           <input placeholder="Search.." id="input" class="input" name="text" type="text">
-           </div>
-
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-warning" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-        <div class="background">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="header-container" style="position: relative; z-index: 1;padding: 10px;">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="img/logo.png" alt="SERVO PACKAGING LIMITED" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+        
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav class="main-nav" id="mainNav">
+            <ul>
+                <li><a href="#">About <i class="fas fa-chevron-down"></i></a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        
+        <div class="InputContainer">
+            <input placeholder="Search.." id="input" class="input" name="text" type="text">
+        </div>
+    </div>
+    
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
     </header>
     
 
@@ -819,6 +1221,18 @@
       observeWithDelay(document.getElementById('feature-1'), observer, 1);
       observeWithDelay(document.getElementById('feature-2'), observer, 2);
       observeWithDelay(document.getElementById('feature-3'), observer, 3);
+      
+      // Mobile menu toggle
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mainNav = document.getElementById('mainNav');
+      
+      if (mobileMenuToggle && mainNav) {
+        mobileMenuToggle.addEventListener('click', function() {
+          mainNav.classList.toggle('active');
+          this.innerHTML = mainNav.classList.contains('active') ? 
+            '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+      }
     });
   </script>
 
@@ -1416,6 +1830,33 @@
                                     transform: translateY(0);
                                   }
                                 }
+                                
+                                /* Responsive styles for events section */
+                                @media (max-width: 768px) {
+                                  header h1 {
+                                    font-size: 3rem;
+                                  }
+                                  
+                                  .main-event {
+                                    flex-direction: column;
+                                  }
+                                  
+                                  .card {
+                                    max-width: 100%;
+                                    min-width: 100%;
+                                  }
+                                }
+                                
+                                @media (max-width: 480px) {
+                                  header h1 {
+                                    font-size: 2.5rem;
+                                  }
+                                  
+                                  .cta-button button {
+                                    font-size: 1rem;
+                                    padding: 10px 20px;
+                                  }
+                                }
                               </style>
                             </head>
                             <body>
@@ -1627,6 +2068,11 @@
   
         .image-box {
           margin-top: 10px;
+          height: 80px;
+        }
+        
+        .wrapper {
+          padding: 30px;
         }
       }
   
@@ -1738,72 +2184,53 @@
       color: #333;
       overflow-x: hidden;
     }
-
-    /* Animation Keyframes */
-    @keyframes fade-in {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    @keyframes slide-in-right {
-      from { transform: translateX(100px); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
-    }
-
-    @keyframes slide-up {
-      from { transform: translateY(40px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes scroll-vertical-down {
-      0% { transform: translateY(-100%); }
-      100% { transform: translateY(100%); }
-    }
-
-    @keyframes scroll-vertical-up {
-      0% { transform: translateY(100%); }
-      100% { transform: translateY(-100%); }
-    }
-
-    @keyframes scroll-horizontal-left {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
-
+  
+    /* Keyframes */
+    @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slide-in-right { from { transform: translateX(100px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    @keyframes slide-up { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes scroll-vertical-down { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+    @keyframes scroll-vertical-up { 0% { transform: translateY(100%); } 100% { transform: translateY(-100%); } }
+    @keyframes scroll-horizontal-left { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
+  
     .client-container {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: row;
+      flex-wrap: nowrap;
       background: #f1f1f1;
       padding: 50px 80px;
-      align-items: center;
-      max-width: 100vw;
+      align-items: flex-start;
       box-sizing: border-box;
+      max-width: 100vw;
+      overflow: hidden;
     }
-
+  
     .logo-scroller {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 30px 40px;
-      margin-right: 60px;
       position: relative;
       overflow: hidden;
       height: 500px;
+      flex: 0 0 auto;
+      margin-right: 60px;
     }
-
-    .logo-column-down {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      animation: scroll-vertical-down 10s linear infinite;
-    }
-
+  
+    .logo-column-down,
     .logo-column-up {
       display: flex;
       flex-direction: column;
       gap: 30px;
+    }
+  
+    .logo-column-down {
+      animation: scroll-vertical-down 10s linear infinite;
+    }
+  
+    .logo-column-up {
       animation: scroll-vertical-up 10s linear infinite;
     }
-
+  
     .logo-wrapper {
       background: #fff;
       width: 100px;
@@ -1817,46 +2244,49 @@
       animation: fade-in 1s ease forwards;
       opacity: 0;
     }
-
+  
     .logo-wrapper:nth-child(1) { animation-delay: 0.1s; }
     .logo-wrapper:nth-child(2) { animation-delay: 0.2s; }
     .logo-wrapper:nth-child(3) { animation-delay: 0.3s; }
-
+  
     .logo-wrapper img {
       max-width: 80%;
       max-height: 80%;
       object-fit: contain;
     }
-
+  
     .right-content {
       flex: 1;
-      text-align: left;
       max-width: 100%;
       animation: slide-in-right 1s ease forwards;
       opacity: 0;
       animation-delay: 0.7s;
       animation-fill-mode: forwards;
+      text-align: left;
+      padding-left: 50px;
     }
-
+  
     .heading {
+      padding-top: 100px;
+    
       font-size: 100px;
       font-weight: bold;
       line-height: 1.2;
     }
-
+  
     .inline-heading {
       display: flex;
       align-items: flex-start;
       gap: 15px;
       flex-wrap: wrap;
     }
-
+  
     .highlight {
       font-size: 56px;
       font-weight: normal;
       position: relative;
     }
-
+  
     .connection-text {
       font-size: 48px;
       font-weight: normal;
@@ -1866,160 +2296,108 @@
       display: block;
       margin-bottom: 10px;
     }
-
+  
     .subheading {
       font-size: 48px;
       font-weight: bold;
       margin-top: -80px;
       margin-bottom: 10px;
     }
-
+  
     .description {
       margin-top: 15px;
       font-size: 20px;
     }
-
-    .testimonial-section {
-      background: white;
-      padding: 40px 0;
-      overflow: hidden;
-    }
-
-    .testimonial-section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 28px;
-      color: #333;
-    }
-
-    .testimonials-wrapper {
-      overflow: hidden;
-      position: relative;
-    }
-
-    .scroll-container {
-      display: flex;
-      width: fit-content;
-      animation: scroll-horizontal-left 40s linear infinite;
-    }
-
-    .testimonial-card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      width: 280px;
-      margin: 0 10px;
-      box-sizing: border-box;
-      word-wrap: break-word;
-      overflow: hidden;
-      flex: 0 0 auto;
-      animation: slide-up 0.8s ease forwards;
-      opacity: 0;
-    }
-
-    .testimonial-card:nth-child(1) { animation-delay: 0.2s; }
-    .testimonial-card:nth-child(2) { animation-delay: 0.4s; }
-    .testimonial-card:nth-child(3) { animation-delay: 0.6s; }
-    .testimonial-card:nth-child(4) { animation-delay: 0.8s; }
-
-    .testimonial-card .stars {
-      color: #f5a623;
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    .testimonial-card p {
-      font-size: 15px;
-      color: #555;
-      margin-bottom: 10px;
-    }
-
-    .testimonial-card b {
-      font-weight: 600;
-      color: #222;
-    }
-
-    @media (max-width: 600px) {
-      .testimonial-card {
-        width: 80vw;
+  
+    /* Scroll animation triggers */
+    .animate-on-scroll { opacity: 0; }
+    .animate-on-scroll.visible.fade-in { animation: fade-in 1s ease forwards; }
+    .animate-on-scroll.visible.slide-up { animation: slide-up 1s ease forwards; }
+    .animate-on-scroll.visible.scroll-vertical-down { animation: scroll-vertical-down 10s linear infinite; }
+    .animate-on-scroll.visible.scroll-vertical-up { animation: scroll-vertical-up 10s linear infinite; }
+  
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .client-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
       }
+  
+      .logo-scroller {
+        margin-right: 0;
+        margin-bottom: 30px;
+        height: 300px;
+      }
+  
+      .heading { font-size: 60px; }
+      .connection-text { font-size: 36px; left: 300px; top: -40px; }
+      .subheading { font-size: 36px; margin-top: -40px; }
     }
-    /* Base animation prep */
-.animate-on-scroll {
-  opacity: 0;
-}
-
-/* Visible trigger */
-.animate-on-scroll.visible.fade-in {
-  animation: fade-in 1s ease forwards;
-}
-
-.animate-on-scroll.visible.slide-up {
-  animation: slide-up 1s ease forwards;
-}
-
-.animate-on-scroll.visible.scroll-vertical-down {
-  animation: scroll-vertical-down 10s linear infinite;
-}
-
-.animate-on-scroll.visible.scroll-vertical-up {
-  animation: scroll-vertical-up 10s linear infinite;
-}
-
+  
+    @media (max-width: 768px) {
+      .heading { font-size: 40px; }
+      .connection-text { font-size: 24px; left: 200px; top: -30px; }
+      .subheading { font-size: 24px; margin-top: -20px; }
+      .description { font-size: 16px; }
+    }
+  
+    @media (max-width: 480px) {
+      .logo-wrapper { width: 70px; height: 90px; }
+      .heading { font-size: 30px; }
+      .connection-text { font-size: 20px; left: 150px; top: -20px; }
+      .subheading { font-size: 20px; }
+    }
   </style>
-
-<div class="client-container animate-on-scroll fade-in">
-  <!-- Logo Scroller -->
-  <div class="logo-scroller">
-    <div class="logo-column-down animate-on-scroll scroll-vertical-down">
-      <div class="logo-wrapper"><img src="img/c-1.png" alt="Logo 1" /></div>
-      <div class="logo-wrapper"><img src="img/c-4.png" alt="Logo 4" /></div>
-      <div class="logo-wrapper"><img src="img/c-2.png" alt="Logo 2" /></div>
-    </div>
-
-    <div class="logo-column-up animate-on-scroll scroll-vertical-up">
-      <div class="logo-wrapper"><img src="img/c-5.png" alt="Logo 5" /></div>
-      <div class="logo-wrapper"><img src="img/c-3.png" alt="Logo 3" /></div>
-      <div class="logo-wrapper"><img src="img/c-6.png" alt="Logo 6" /></div>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <div class="right-content animate-on-scroll slide-up">
-    <h1 class="heading">
-      <div class="inline-heading">
-        <span>BUILDING</span>
-        <span class="highlight">Stronger</span>
+  
+  <!-- HTML Structure -->
+  <div class="client-container animate-on-scroll fade-in">
+    <!-- Logo Scroller (Left) -->
+    <div class="logo-scroller">
+      <div class="logo-column-down animate-on-scroll scroll-vertical-down">
+        <div class="logo-wrapper"><img src="img/c-1.png" alt="Logo 1" /></div>
+        <div class="logo-wrapper"><img src="img/c-4.png" alt="Logo 4" /></div>
+        <div class="logo-wrapper"><img src="img/c-2.png" alt="Logo 2" /></div>
       </div>
-      <span class="connection-text">Connection</span>
-    </h1>
-    <h2 class="subheading" style="color: #444;">With Our Valuable Clients</h2>
-    <p class="description">Leverage your existing marketing platforms and sync the data seamlessly</p>
+  
+      <div class="logo-column-up animate-on-scroll scroll-vertical-up">
+        <div class="logo-wrapper"><img src="img/c-5.png" alt="Logo 5" /></div>
+        <div class="logo-wrapper"><img src="img/c-3.png" alt="Logo 3" /></div>
+        <div class="logo-wrapper"><img src="img/c-6.png" alt="Logo 6" /></div>
+      </div>
+    </div>
+  
+    <!-- Right Side Content -->
+    <div class="right-content animate-on-scroll slide-up">
+      <h1 class="heading">
+        <div class="inline-heading">
+          <span>BUILDING</span>
+          <span class="highlight">Stronger</span>
+        </div>
+        <span class="connection-text">Connection</span>
+      </h1>
+      <h2 class="subheading" style="color: #444;">With Our Valuable Clients</h2>
+      <p class="description">Leverage your existing marketing platforms and sync the data seamlessly</p>
+    </div>
   </div>
-</div>
-
-<script>
-  // Animation on scroll
-  const animateElements = document.querySelectorAll('.animate-on-scroll');
-
-  function checkScroll() {
-    animateElements.forEach(element => {
-      const elementTop = element.getBoundingClientRect().top;
-      const windowHeight = window.innerHeight;
-
-      if (elementTop < windowHeight - 1000) {
-        element.classList.add('visible');
-      }
-    });
-  }
-
-  // Initial check
-  checkScroll();
-
-  // Check on scroll
-  window.addEventListener('scroll', checkScroll);
-</script>
+  
+  <script>
+    // Animation on scroll
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    function checkScroll() {
+      animateElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (elementTop < windowHeight - 100) {
+          element.classList.add('visible');
+        }
+      });
+    }
+    checkScroll();
+    window.addEventListener('scroll', checkScroll);
+  </script>
+  
+  
 
   
   
@@ -2556,6 +2934,99 @@
   .animate-on-scroll.visible {
       opacity: 1;
       transform: translateY(0);
+  }
+  
+  /* Responsive styles for contact section */
+  @media (max-width: 992px) {
+    .top-section {
+      flex-direction: column;
+      padding: 30px;
+    }
+    
+    .form-section {
+      padding-right: 0;
+      padding-left: 0;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    
+    .form-input, .form-textarea {
+      width: 100%;
+    }
+    
+    .tagline {
+      font-size: 60px;
+      padding-left: 20px;
+    }
+    
+    .subheading {
+      width: 100%;
+      font-size: 32px;
+    }
+    
+    .contact-header {
+      padding-left: 20px;
+    }
+    
+    .middle-section {
+      flex-direction: column;
+    }
+    
+    .contact-details {
+      margin-top: 100px;
+      flex-direction: column;
+    }
+    
+    .info-tagline {
+      margin-bottom: 20px;
+      font-size: 36px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .tagline {
+      font-size: 40px;
+    }
+    
+    .subheading {
+      font-size: 24px;
+    }
+    
+    .social-icons {
+      position: relative;
+      flex-direction: row;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+      bottom: auto;
+      right: auto;
+    }
+    
+    .footer-section {
+      padding: 30px 20px;
+    }
+    
+    .footer-column {
+      flex: 1 1 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tagline {
+      font-size: 32px;
+    }
+    
+    .contact-header {
+      font-size: 24px;
+    }
+    
+    .detail-label {
+      font-size: 20px;
+    }
+    
+    .detail-value, .detail-hours {
+      font-size: 16px;
+    }
   }
 </style>
 </head>
